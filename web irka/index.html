@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayEase Premium — Luxury Hotel Booking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-crown text-warning"></i> StayEase
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog Hotel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#fasilitas">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+
+                <div class="ms-3 d-flex align-items-center">
+                    <span id="userLogin" class="text-white me-3">
+                        <i class="fas fa-user-circle"></i> Irka Azima
+                    </span>
+                    <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">
+                <i class="fas fa-star"></i> PREMIUM COLLECTION 2026
+            </span>
+            <h1 class="hero-title">
+                Nikmati Pengalaman<br>
+                <span class="text-gold">Menginap Mewah</span><br>
+                Bintang Lima
+            </h1>
+            <p class="hero-subtitle">
+                Temukan hotel dan villa premium dengan pelayanan kelas dunia<br>
+                dan harga terbaik hanya di StayEase.
+            </p>
+            <div class="hero-buttons">
+                <a href="katalog.html" class="btn btn-gold btn-lg">
+                    <i class="fas fa-compass"></i> Jelajahi Sekarang
+                </a>
+                <a href="#fasilitas" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-play-circle"></i> Lihat Fasilitas
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Hotel Premium</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50K+</h3>
+                    <p>Tamu Bahagia</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9</h3>
+                    <p>Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5" id="search">
+        <div class="search-box">
+            <h3 class="text-center mb-4">
+                <i class="fas fa-search text-gold"></i> Cari Hotel Impian Anda
+            </h3>
+            <form id="searchForm" onsubmit="searchHotel(event)">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label"><i class="fas fa-map-marker-alt"></i> Kota Tujuan</label>
+                        <input type="text" class="form-control" placeholder="Bali, Jakarta, dll" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label"><i class="fas fa-calendar"></i> Check-in</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label"><i class="fas fa-calendar-check"></i> Check-out</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label"><i class="fas fa-users"></i> Irka Azima</label>
+                        <select class="form-control" required>
+                            <option value="">Pilih</option>
+                            <option>1 Tamu</option>
+                            <option>2 Tamu</option>
+                            <option>3 Tamu</option>
+                            <option>4+ Tamu</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-gold w-100 btn-lg">
+                            <i class="fas fa-search"></i> Cari Hotel Terbaik
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="hotel" class="container py-5">
+        <div class="text-center mb-5">
+            <span class="section-badge">KOLEKSI PREMIUM</span>
+            <h2 class="section-title">Hotel & Villa Pilihan</h2>
+            <p class="section-subtitle">Pilihan terbaik untuk pengalaman menginap tak terlupakan</p>
+        </div>
+
+        <div class="row g-4">
+
+            <article class="col-md-4">
+                <div class="card hotel-card">
+                    <div class="hotel-img-wrapper">
+                        <img src="images/grand-luxury-hotel.jpg" class="card-img-top" alt="Grand Luxury Hotel">
+                        <span class="hotel-badge">⭐ PREMIUM</span>
+                        <div class="hotel-price">Rp 1.500.000<span>/malam</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ <span class="text-muted">(4.9)</span></div>
+                        <h5>Grand Luxury Hotel</h5>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span><i class="fas fa-spa"></i> Spa</span>
+                        </div>
+                        <button class="btn btn-gold w-100" onclick="bookingHotel('Grand Luxury Hotel', 1500000)">
+                            <i class="fas fa-calendar-check"></i> Booking Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="card hotel-card">
+                    <div class="hotel-img-wrapper">
+                        <img src="images/sunset-paradise.jpg" class="card-img-top" alt="Sunset Paradise">
+                        <span class="hotel-badge">⭐ BEST SELLER</span>
+                        <div class="hotel-price">Rp 1.250.000<span>/malam</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ <span class="text-muted">(4.8)</span></div>
+                        <h5>Sunset Paradise</h5>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Lombok, Indonesia</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-utensils"></i> Restaurant</span>
+                            <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                        </div>
+                        <button class="btn btn-gold w-100" onclick="bookingHotel('Sunset Paradise', 1250000)">
+                            <i class="fas fa-calendar-check"></i> Booking Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="card hotel-card">
+                    <div class="hotel-img-wrapper">
+                        <img src="images/ocean-breeze-villa.jpg" class="card-img-top" alt="Ocean Breeze Villa">
+                        <span class="hotel-badge villa-badge">🏡 VILLA</span>
+                        <div class="hotel-price">Rp 2.100.000<span>/malam</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="hotel-rating">⭐⭐⭐⭐⭐ <span class="text-muted">(5.0)</span></div>
+                        <h5>Ocean Breeze Villa</h5>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-swimming-pool"></i> Private Pool</span>
+                            <span><i class="fas fa-umbrella-beach"></i> Beach</span>
+                        </div>
+                        <button class="btn btn-gold w-100" onclick="bookingHotel('Ocean Breeze Villa', 2100000)">
+                            <i class="fas fa-calendar-check"></i> Booking Villa
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="katalog.html" class="btn btn-gold btn-lg">
+                <i class="fas fa-th-large"></i> Lihat Semua Hotel & Villa
+            </a>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="fasilitas-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge light">FASILITAS PREMIUM</span>
+                <h2 class="section-title light">Nikmati Kemewahan</h2>
+                <p class="section-subtitle light">Fasilitas kelas dunia untuk kenyamanan Anda</p>
+            </div>
+
+            <div class="row g-4">
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('WiFi Super Cepat', 'Internet cepat tersedia di area kamar, lobby, restoran, dan kolam. Cocok untuk kerja, tugas kuliah, meeting online, atau streaming tanpa putus-putus.')">
+                        <div class="facility-icon"><i class="fas fa-wifi"></i></div>
+                        <h5>WiFi Super Cepat</h5>
+                        <p>Internet kecepatan tinggi di seluruh area</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Kolam Renang', 'Kolam renang nyaman dengan suasana santai. Cocok untuk bersantai sore hari, foto-foto, atau menikmati liburan bersama keluarga.')">
+                        <div class="facility-icon"><i class="fas fa-swimming-pool"></i></div>
+                        <h5>Kolam Renang</h5>
+                        <p>Infinity pool dengan pemandangan indah</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Restoran Mewah', 'Restoran menyediakan menu sarapan, makan siang, dan makan malam. Pilihan makanannya dibuat nyaman untuk tamu lokal maupun wisatawan.')">
+                        <div class="facility-icon"><i class="fas fa-utensils"></i></div>
+                        <h5>Restoran Mewah</h5>
+                        <p>Hidangan internasional oleh chef ternama</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Spa & Wellness', 'Fasilitas spa membantu tamu lebih rileks setelah perjalanan jauh. Cocok untuk istirahat dan melepas penat.')">
+                        <div class="facility-icon"><i class="fas fa-spa"></i></div>
+                        <h5>Spa & Wellness</h5>
+                        <p>Perawatan tradisional & modern</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Parkir Luas', 'Area parkir dibuat aman dan mudah diakses, jadi tamu tidak perlu khawatir membawa kendaraan pribadi.')">
+                        <div class="facility-icon"><i class="fas fa-car"></i></div>
+                        <h5>Parkir Luas</h5>
+                        <p>Area parkir aman dan nyaman</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Gym & Fitness', 'Gym tersedia untuk tamu yang tetap ingin olahraga ringan selama menginap di hotel.')">
+                        <div class="facility-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h5>Gym & Fitness</h5>
+                        <p>Peralatan modern lengkap</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Bar & Lounge', 'Tempat santai dengan suasana elegan untuk ngobrol, menikmati minuman, atau menunggu teman.')">
+                        <div class="facility-icon"><i class="fas fa-cocktail"></i></div>
+                        <h5>Bar & Lounge</h5>
+                        <p>Minuman premium & suasana elegan</p>
+                    </div>
+                </article>
+                <article class="col-md-3 col-6">
+                    <div class="facility-card facility-click" tabindex="0" role="button" onclick="showFacility('Room Service 24/7', 'Layanan kamar tersedia kapan saja. Tamu bisa meminta bantuan, memesan makanan, atau menanyakan kebutuhan menginap dengan lebih mudah.')">
+                        <div class="facility-icon"><i class="fas fa-concierge-bell"></i></div>
+                        <h5>Room Service 24/7</h5>
+                        <p>Layanan kamar sepanjang hari</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> 
+
+    <section id="testimoni" class="container py-5">
+        <div class="text-center mb-5">
+            <span class="section-badge">TESTIMONI</span>
+            <h2 class="section-title">Kata Mereka</h2>
+            <p class="section-subtitle">Pengalaman nyata dari tamu kami</p>
+        </div>
+
+        <div class="row g-4">
+            <article class="col-md-4">
+                <div class="testimonial-card" onclick="showTestimoni('Azka', 'Business Traveler', 'Hotel sangat nyaman dan mewah. Pelayanan luar biasa, staff sangat ramah. Pasti akan kembali lagi!')">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Hotel sangat nyaman dan mewah. Pelayanan luar biasa, staff sangat ramah. Pasti akan kembali lagi!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">IA</div>
+                        <div>
+                            <h6>Azka</h6>
+                            <small>Business Traveler</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md-4">
+                <div class="testimonial-card" onclick="showTestimoni('Budi Santoso', 'Family Vacation', 'Pelayanan sangat memuaskan. Kamar bersih, fasilitas lengkap, dan lokasi strategis. Highly recommended!')">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Pelayanan sangat memuaskan. Kamar bersih, fasilitas lengkap, dan lokasi strategis. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BS</div>
+                        <div>
+                            <h6>Budi Santoso</h6>
+                            <small>Family Vacation</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md-4">
+                <div class="testimonial-card" onclick="showTestimoni('Siti Rahayu', 'Honeymoon', 'Villa-nya luar biasa indah! Private pool dengan pemandangan sawah. Pengalaman honeymoon terbaik!')">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Villa-nya luar biasa indah! Private pool dengan pemandangan sawah. Pengalaman honeymoon terbaik!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div>
+                            <h6>Siti Rahayu</h6>
+                            <small>Honeymoon</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <aside class="cta-section">
+        <div class="container text-center">
+            <h2>Siap untuk Pengalaman Mewah?</h2>
+            <p>Bergabunglah dengan ribuan tamu yang telah merasakan kemewahan StayEase</p>
+            <a href="katalog.html" class="btn btn-gold btn-lg">
+                <i class="fas fa-rocket"></i> Mulai Sekarang
+            </a>
+        </div>
+    </aside>
+</main>
+
+<footer id="kontak" class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h4><i class="fas fa-crown text-warning"></i> StayEase</h4>
+                <p>Platform booking hotel dan villa premium terpercaya di Indonesia. Menginap nyaman, fasilitas lengkap, dan booking lebih mudah.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h6>Menu</h6>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="katalog.html">Katalog Hotel</a></li>
+                    <li><a href="index.html#fasilitas">Fasilitas</a></li>
+                    <li><a href="index.html#testimoni">Testimoni</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6>Kontak</h6>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@stayease.com</li>
+                    <li><i class="fas fa-phone"></i> 0812-3456-7890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Banda Aceh, Indonesia</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6>Newsletter</h6>
+                <p>Dapatkan info promo hotel langsung ke email Anda.</p>
+                <form onsubmit="subscribeNewsletter(event)">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Anda" required>
+                        <button type="submit" class="btn btn-gold"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="text-center">
+            <p class="mb-0">© 2026 StayEase Premium. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content luxury-modal">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-crown text-warning"></i> Login StayEase</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="loginUser(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" id="nama" class="form-control" placeholder="Contoh: Irka Azima" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Contoh: nama@gmail.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-gold w-100">
+                        <i class="fas fa-sign-in-alt"></i> Masuk
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content luxury-modal booking-modal">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-calendar-check text-warning"></i> Form Booking</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-summary mb-4">
+                    <h4 id="bookingHotelName">Nama Hotel</h4>
+                    <p id="bookingHotelPrice" class="mb-0">Harga hotel</p>
+                </div>
+                <form onsubmit="submitBooking(event)">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nama Pemesan</label>
+                            <input type="text" id="bookingNama" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Nomor HP</label>
+                            <input type="text" id="bookingHp" class="form-control" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tanggal Check-in</label>
+                            <input type="date" id="bookingCheckin" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Jumlah Malam</label>
+                            <select id="bookingMalam" class="form-control" required>
+                                <option value="1">1 malam</option>
+                                <option value="2">2 malam</option>
+                                <option value="3">3 malam</option>
+                                <option value="4">4 malam</option>
+                                <option value="5">5 malam</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Jumlah Tamu</label>
+                            <select id="bookingTamu" class="form-control" required>
+                                <option value="1">1 orang</option>
+                                <option value="2">2 orang</option>
+                                <option value="3">3 orang</option>
+                                <option value="4">4 orang</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Metode Pembayaran</label>
+                            <select id="bookingBayar" class="form-control" required>
+                                <option value="Transfer Bank">Transfer Bank</option>
+                                <option value="DANA">DANA</option>
+                                <option value="OVO">OVO</option>
+                                <option value="Bayar di Hotel">Bayar di Hotel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="booking-total mt-4">
+                        <span>Total sementara:</span>
+                        <strong id="bookingTotal">Rp 0</strong>
+                    </div>
+                    <button type="submit" class="btn btn-gold w-100 mt-3">
+                        <i class="fas fa-check-circle"></i> Konfirmasi Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="facilityModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content luxury-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="facilityTitle">Detail Fasilitas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="facilityText" class="mb-3"></p>
+                <a href="katalog.html" class="btn btn-gold w-100">
+                    <i class="fas fa-bed"></i> Pilih Hotel Sekarang
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="testimoniModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content luxury-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="testimoniNama">Detail Testimoni</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-warning mb-2">⭐⭐⭐⭐⭐</p>
+                <p id="testimoniIsi" class="mb-3"></p>
+                <small id="testimoniInfo" class="text-muted"></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
